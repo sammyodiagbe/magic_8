@@ -7,6 +7,7 @@ void main() {
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
 
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -27,10 +28,12 @@ class Home extends StatelessWidget {
 class Magic8 extends StatefulWidget {
   const Magic8({Key? key}) : super(key: key);
 
+  @override
   State<Magic8> createState() => _Magic8State();
 }
 
 class _Magic8State extends State<Magic8> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.amber,
