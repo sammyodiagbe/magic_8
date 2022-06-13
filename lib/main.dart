@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import "package:flutter/material.dart";
 
 void main() {
@@ -33,17 +35,35 @@ class Magic8 extends StatefulWidget {
 }
 
 class _Magic8State extends State<Magic8> {
+  var rand = Random();
+  int _answer = 1;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    _answer = rand.nextInt(5) + 1;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.amber,
       appBar: AppBar(
         title: Text('Ask me anything.'),
+        centerTitle: true,
       ),
       body: Center(
-        child: Image(
-          image: AssetImage('/images/ball1.png'),
-          width: 100,
+        child: GestureDetector(
+          onTap: () {
+            setState(() {
+              _answer = rand.nextInt(5) + 1;
+            });
+          },
+          child: Image(
+            image: AssetImage('images/ball$_answer.png'),
+            width: 400,
+          ),
         ),
       ),
     );
